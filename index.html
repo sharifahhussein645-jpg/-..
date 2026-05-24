@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FITS | Own Your Fit</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    background: #f7f7f7;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .container {
+    display: flex;
+    width: 300vw;
+    height: 100vh;
+    transition: transform 0.6s ease;
+  }
+
+  .slide {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .s1 { background: #ffffff; }
+  .s2 { background: #f2f2f2; }
+  .s3 { background: #e9e9e9; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  p {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #222;
+  }
+
+  .motto {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .links a {
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .buttons {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 10px 18px;
+    border: none;
+    background: #111;
+    color: white;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="slider">
+
+  <!-- SLIDE 1 -->
+  <div class="slide s1">
+    <div>
+      <h1>FITS</h1>
+      <p>
+        At a young age, FITS started noticing how appearance, confidence, and environment shape how people move, think, and are treated. That awareness became the foundation of FITS — not as a trend, but as a concept built around expression, identity, and presence.
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide s2">
+    <div>
+      <p>
+        FITS represents more than outfits. It represents alignment — how what you wear reflects how you feel, think, and carry yourself in a world that is constantly judging before understanding.
+
+        The idea is simple, but deeply layered: you don’t just dress up — you present a version of yourself that already exists within you.
+      </p>
+
+      <div class="motto">Own Your Fit</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide s3">
+    <div>
+      <p>
+        FITS is built to grow into something bigger than clothing — a brand of clarity, confidence, and self-expression.
+
+        It is not about loud fashion. It is about intentional presence where simplicity carries meaning and detail speaks without noise.
+      </p>
+
+      <div class="motto">Mission: Define your identity through style</div>
+
+      <div class="links">
+        <a href="https://www.tiktok.com/@_fits.a" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/_fits.a?igsh=YzFqaHp3eWg0c2E=" target="_blank">Instagram</a>
+      </div>
+
+      <div class="motto">Own Your Fit</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="buttons">
+  <button onclick="moveLeft()">⬅ Prev</button>
+  <button onclick="moveRight()">Next ➡</button>
+</div>
+
+<script>
+let index = 0;
+
+function update() {
+  document.getElementById("slider").style.transform = `translateX(-${index * 100}vw)`;
+}
+
+function moveRight() {
+  if (index < 2) index++;
+  update();
+}
+
+function moveLeft() {
+  if (index > 0) index--;
+  update();
+}
+</script>
+
+</body>
+</html>
